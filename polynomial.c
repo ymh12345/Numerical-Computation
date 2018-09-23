@@ -2,15 +2,19 @@
 #include <time.h>
 double my_pow(double x, int n);
 double direct_poly(double x);
+double horner(double x);
 
 
 int main()
 {
-    double a, t1, t2;
-    t1 = clock();
-    a = direct_poly(2);
-    t2 = clock();
-    printf("%lf\n%lf", a, (t2-t1)/CLOCKS_PER_SEC);
+    //double a, t1, t2;
+    //t1 = clock();
+    //a = direct_poly(2);
+    //t2 = clock();
+	double a;
+	a = horner(2);
+    printf("%lf\n", a);
+	system("pause");
     return 0;
 }
 
@@ -34,4 +38,16 @@ double my_pow(double x, int n)
         return 1;
     else
         return x * my_pow(x, n-1);
+}
+
+
+double horner(double x)
+{
+	// QinJiuShao algorithm is called horner algorithm also.
+	double a[6] = { 0.00125, 0.0626, 0.435, 1.2215, 1.912, 2.196 };
+	double rlt = 0;
+	for (int i = 6; i > 0; i--) {
+		rlt += a[6 - i] * x;
+	}
+	return rlt;
 }
