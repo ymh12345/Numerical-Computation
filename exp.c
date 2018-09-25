@@ -14,6 +14,7 @@ int main()
         t = my_exp(1, i);
         error = t - e;
         printf("%lf\n", error);
+        
     }
 }
 
