@@ -13,8 +13,7 @@ int main()
     for(i=0;i<10;i++){
         t = my_exp(1, i);
         error = t - e;
-        printf("%lf\n", error);
-        
+        printf("%.10lf\n", error);
     }
 }
 
