@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define e 2.7118281828
+#define e 2.718281828
 
 double my_exp(double x, int n);
 int factorial(int x);
@@ -13,7 +13,7 @@ int main()
     for(i=0;i<10;i++){
         t = my_exp(1, i);
         error = t - e;
-        printf("%.10lf\n", error);
+        printf("%.9lf\n", error);
     }
 }
 
